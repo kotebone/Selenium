@@ -14,7 +14,7 @@ class AppOrder {
 
     @BeforeAll
     static void setupClass() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\KoteBone\\QA\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C://Users/KoteBone/QA/chromedriver.exe");
     }
 
     @BeforeEach
