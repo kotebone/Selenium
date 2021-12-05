@@ -14,7 +14,7 @@ class AppOrder {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\KoteBone\\QA\\chromedriver.exe");
     }
 
     @BeforeEach
@@ -61,7 +61,7 @@ class AppOrder {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("[type='button']")).click();
-        String resultMessage = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().strip();
+        String resultMessage = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub")).getText().strip();
         String expectedMessage = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
         assertEquals(expectedMessage, resultMessage, "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.");
     }
