@@ -62,7 +62,7 @@ class AppOrder {
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("[type='button']")).click();
         String resultMessage = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().strip();
-        String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        String expectedMessage = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
         assertEquals(expectedMessage, resultMessage, "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.");
     }
 }
