@@ -1,5 +1,6 @@
 package ru.netology;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +17,7 @@ class AppOrder {
 
     @BeforeAll
     static void setupClass() {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\KoteBone\\QA\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
@@ -67,4 +68,6 @@ class AppOrder {
         String expectedMessage = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
         assertEquals(expectedMessage, resultMessage, "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.");
     }
+
+
 }
